@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>Haunted House</h1>
+    </header>
+    <main>
+       <nav> <h1>Curious Teenagers</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `In a quiet, sleepy town nestled in the mountains, there was a house that stood out from the rest. It was an old, dilapidated mansion that had been abandoned for years. Locals whispered tales of strange occurrences and unexplained phenomena surrounding the house.
+
+One day, a group of curious teenagers decided to investigate the mysteries that shrouded the mansion. Armed with flashlights and their fearless spirits, they ventured into the darkness.
+
+As they entered the creaking front door, an eerie chill filled the air. The house seemed to come alive, with whispers echoing through the halls and shadows dancing on the walls. Each step they took sent shivers down their spines.
+
+They explored room after room, discovering forgotten relics and remnants of the past. But as they descended into the basement, the atmosphere grew even more unsettling. The air was heavy, as if a presence lingered in the darkness.
+
+In the depths of the basement, they stumbled upon a hidden door. Intrigued, they pushed it open, revealing a secret chamber. Inside, they found an ancient journal, its pages filled with cryptic symbols and mysterious writings.
+
+As they delved deeper into the journal’s secrets, they uncovered a tale of forbidden knowledge and a lost artifact that held immense power. The artifact was said to grant its possessor unimaginable abilities, but at a great cost.
+
+Driven by curiosity and a thirst for adventure, the teenagers embarked on a quest to find the artifact. Their journey took them to forgotten temples, treacherous caves, and ancient ruins. Along the way, they encountered riddles, traps, and encounters with otherworldly beings.
+
+As they drew closer to their goal, they realized the true nature of the artifact. It was not a source of power, but a test of character and a lesson in the dangers of unchecked ambition. They had to make a choice: embrace the allure of power or reject it for the sake of their own humanity.
+
+In the end, they made the selfless decision to leave the artifact untouched. They realized that true strength lies not in possessing power, but in using it wisely and responsibly.
+
+And so, the teenagers returned to the abandoned mansion, forever changed by their encounter with the mysterious artifact. The house remained a symbol of the unknown, a reminder that some secrets are best left undiscovered.
+
+I hope you enjoyed this mysterious tale 🕵️‍♀️🔍`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
